@@ -1,92 +1,100 @@
 \section{Maxwell-Gleichungen}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{l | X | X}
+		\makecell[l]{\textbf{Gaußsches Gesetz}} & 
+			\(\boxed{\opdiv \vec{D} = \nabla \cdot \vec{D} = \rho}\) \par \vspace*{3pt} \footnotesize 
+				Das elektrische Feld ist ein Quellenfeld. Die Ladung \(Q\) bzw. die Ladungsdichte \(\rho\) sind Quellen des elektrischen Feldes. & 
+			\(\boxed{\oiint_{\partial V} \vec{D} \cdot \mathrm{d} \vec{a} = \iiint_V \rho \mathrm{d}V = Q}\) \par \vspace*{3pt} \footnotesize
+				Der (elektrische) Fluss durch die geschlossene Oberfläche \(\partial V\) eines Volumens \(V\) ist gleich der elektrischen Ladung in seinem Inneren. \\
+		\makecell[l]{\textbf{Gaußsches Gesetz} \\ \textbf{für Magnetismus}} & 
+			\(\boxed{\opdiv \vec{B} = \nabla \cdot \vec{B} = 0}\) \par \vspace*{3pt} \footnotesize 
+				Das magnetische Feld ist quellenfrei. Es gibt keine magnetischen Monopole. & 
+			\(\boxed{\oiint_{\partial V} \vec{B} \cdot \mathrm{d} \vec{a} = 0}\) \par \vspace*{3pt} \footnotesize 
+				Der mag. Fluss durch die geschlossene Oberfläche \(\partial V\) eines Volumens \(V\) entspricht der mag. Ladung in seinem Inneren, nämlich 0, da es keine magnetischen Monopole gibt. \\
+		\makecell[l]{\textbf{Induktionsgesetz}} & 
+			\(\boxed{\oprot \vec{E} = \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}}\) \par \vspace*{3pt} \footnotesize 
+				Jede zeitliche Änderung eines Magnetfeldes bewirkt ein elektrisches Wirbelfeld. & 
+			\(\boxed{\oint_{\partial A} \vec{E} \cdot \mathrm{d} \vec{s} = -\iint_A \frac{\partial \vec{B}}{\partial t} \cdot \mathrm{d} \vec{a} = -\frac{\partial \Phi_{eingesch.}}{\partial t}}\)  \par \vspace*{3pt} \footnotesize 
+				Die induzierte Umlaufspannung bzgl. der Randkurve \(\partial A\) einer Fläche \(A\) ist gleich der negativen zeitlichen Änderung des magnetischen Flusses durch diese Fläche. \\
+		\makecell[l]{\textbf{Amperesches Gesetz} \\ \textbf{Durchflutungsgesetz}} & 
+			\(\boxed{\oprot \vec{H} = \nabla \times \vec{H} = \vec{j} + \frac{\partial \vec{D}}{\partial t}}\) \par \vspace*{3pt} \footnotesize 
+				Jeder Strom und jede zeitliche Änderung des elektrischen Feldes (Verschiebungsstrom) bewirkt ein magnetisches Wirbelfeld & 
+			\(\boxed{\oint_{\partial A} \vec{H} \cdot \mathrm{d} \vec{s} = \iint_A \left( \vec{j} + \frac{\partial \vec{D}}{\partial t} \right) \cdot \mathrm{d} \vec{a}}\)  \par \vspace*{3pt} \footnotesize 
+				Die mag. Umlaufspannung bzgl. der Randkurve \(\partial A\) einer Fläche \(A\) entspricht dem von dieser Fläche eingeschlossenen Strom (inkl. Verschiebungsstrom).
+	\end{tabularx}
+\end{table}
 
-\includegraphics[width=0.7\columnwidth]{../Figures/Integralsatz.png}
-
-\textbf{Amperesches- /Durchflutungsgesetz:}
-
-\begin{tabularx}{\textwidth}{>{\hsize=.5\hsize}X>{\hsize=.5\hsize}X}
-	Elek. Strom ist Ursache für ein magn. Wirbelfeld. & $\boxed{\oint_s \vec{H} \cdot d \vec{s} = \Theta = I = \iint_A \vec{J} \cdot d \vec{A} = \frac{d\Phi_e}{dt}}$ \\
-\end{tabularx}
-
-\textbf{Induktionsgesetz:}
-
-\begin{tabularx}{\textwidth}{>{\hsize=.5\hsize}X>{\hsize=.5\hsize}X}
-	Ein sich zeitlich änderndes Magnetfeld erzeugt ein elek. Wirbelfeld. & $\boxed{\oint_s{\vec{E} \cdot d\vec{s}} = u_{ind} = -\frac{d}{dt}\iint_A{\vec{B} \cdot d\vec{A}} = -\frac{d\Phi_m}{dt}}$        \\
-	                                                                     & $\boxed{rot{\vec{E}} = -\frac{\partial\vec{B}}{\partial t} = -\mu\cdot\frac{\partial\vec{H}}{\partial t} = -j\omega\mu\vec{H}}$
-\end{tabularx}
-
-\textbf{Differentielles ohmsches Gesetz:}
-
-\begin{tabularx}{\textwidth}{>{\hsize=.5\hsize}X>{\hsize=.5\hsize}X}
-	Elektrische Feldstärke erzeugt über Materialeigenschaften die Stromdichte & $\boxed{ \vec{J} = \kappa \cdot \vec{E}} $
-\end{tabularx}
-
-Bei isotropen Stoffen sind $\varepsilon$ u. $\mu$ Skalare:
-\[
-	\varepsilon = \varepsilon_0 \cdot \varepsilon_r \qquad \mu = \mu_0 \cdot \mu_r
-\]
-
-Zeitbereich: $ \dfrac{\partial}{\partial t} $ \qquad \qquad
-Harmonischer Frequenzbereich (komplexe Berechnung): $ jw $
+\subsection{Materialgleichungen}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l  l  l}
+			\textbf{Differentielles ohmsches Gesetz} & \textbf{Materialgleichung} & \textbf{Materialgleichung} \\
+			\(\boxed{\vec{J} = \kappa \cdot \vec{E} = \left[\frac{\mathrm{A}}{\mathrm{m}^2}\right]}\) & 
+			\(\boxed{\vec{D} = \varepsilon \cdot \vec{E} = \left[\frac{\mathrm{C}}{\mathrm{m}^2}\right]}\) & 
+			\(\boxed{\vec{B} = \mu \cdot \vec{H} = \left[\mathrm{T}\right]}\)
+		\end{tabular}
+	\end{table}
 
 \subsection{Feldstärkekomponenten einer ebenen Welle}
-Bei Ausbreitung in $z$-Richtung gibt es keine Amplitudenabhängigkeit von $x, y$
-d.h. $\frac{\partial \ldots}{\partial x}=\frac{\partial \ldots}{\partial y}=0$
+	Bei Ausbreitung in $z$-Richtung gibt es keine Amplitudenabhängigkeit von $x, y$
+	d.h. $\frac{\partial \ldots}{\partial x}=\frac{\partial \ldots}{\partial y}=0$ \\
+	Ableitung einer harmonischen Größe nach der Zeit ergibt $\frac{\partial \ldots}{\partial t}=\mathrm{j} \omega \ldots$ 
 
-damit ergibt sich aus den Maxwell'schen Gleichungen:
-{\footnotesize
-$$
-	\begin{gathered}
-		\boxed{\operatorname{rot} \underline{\vec{E}}=-\mathrm{j} \omega \mu \underline{\vec{H}}} \qquad \boxed{\operatorname{rot} \underline{\vec{H}}=\mathrm{j} \omega \varepsilon \underline{\vec{E}}} \\
-		\operatorname{rot} \underline{\vec{E}}=\left|\begin{array}{ccc}
-			\vec{e}_x                   & \vec{e}_y                   & \vec{e}_z                   \\
-			\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-			\underline{E}_x             & \underline{E}_y             & \underline{E}_z
-		\end{array}\right|=\left(\begin{array}{c}
-				\frac{\partial \underline{E}_z}{\partial y}-\frac{\partial \underline{E}_y}{\partial z} \\
-				\frac{\partial \underline{E}_x}{\partial z}-\frac{\partial \underline{E}_z}{\partial x} \\
-				\frac{\partial \underline{E}_y}{\partial x}-\frac{\partial \underline{E}_x}{\partial y}
-			\end{array}\right)=\left(\begin{array}{l}
-				0-\frac{\partial \underline{E}_y}{\partial z} \\
-				\frac{\partial \underline{E}_x}{\partial z}-0 \\
-				0-0
-			\end{array}\right)=-\mathrm{j} \omega \mu\left(\begin{array}{l}
-				\underline{H}_x \\
-				\underline{H}_y \\
-				\underline{H}_z
-			\end{array}\right) \\
-		\operatorname{rot} \underline{\vec{H}}=\left|\begin{array}{ccc}
-			\vec{e}_x                   & \vec{e}_y                   & \vec{e}_z                   \\
-			\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-			\underline{H}_x             & \underline{H}_y             & \underline{H}_z
-		\end{array}\right|=\left(\begin{array}{c}
-				\frac{\partial \underline{H_z}}{\partial y}-\frac{\partial \underline{H}_y}{\partial z} \\
-				\frac{\partial \underline{H}_x}{\partial z}-\frac{\partial \underline{H}_z}{\partial x} \\
-				\frac{\partial \underline{H}_y}{\partial x}-\frac{\partial \underline{H}_x}{\partial y}
-			\end{array}\right)=\left(\begin{array}{c}
-				0-\frac{\partial \underline{H}_y}{\partial z} \\
-				\frac{\partial \underline{H}_x}{\partial z}-0 \\
-				0-0
-			\end{array}\right)=\mathrm{j} \omega \varepsilon\left(\begin{array}{l}
-				\underline{E}_x \\
-				\underline{E}_y \\
-				\underline{E}_z
-			\end{array}\right)
-	\end{gathered}
-$$
-}
+	damit ergibt sich aus den Maxwell'schen Gleichungen:
+	{\footnotesize
+	$$
+		\begin{gathered}
+			\boxed{\operatorname{rot} \underline{\vec{E}}=-\mathrm{j} \omega \mu \underline{\vec{H}}} \qquad \boxed{\operatorname{rot} \underline{\vec{H}}=\mathrm{j} \omega \varepsilon \underline{\vec{E}}} \\
+			\operatorname{rot} \underline{\vec{E}}=\left|\begin{array}{ccc}
+				\vec{e}_x                   & \vec{e}_y                   & \vec{e}_z                   \\
+				\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+				\underline{E}_x             & \underline{E}_y             & \underline{E}_z
+			\end{array}\right|=\left(\begin{array}{c}
+					\frac{\partial \underline{E}_z}{\partial y}-\frac{\partial \underline{E}_y}{\partial z} \\
+					\frac{\partial \underline{E}_x}{\partial z}-\frac{\partial \underline{E}_z}{\partial x} \\
+					\frac{\partial \underline{E}_y}{\partial x}-\frac{\partial \underline{E}_x}{\partial y}
+				\end{array}\right)=\left(\begin{array}{l}
+					0-\frac{\partial \underline{E}_y}{\partial z} \\
+					\frac{\partial \underline{E}_x}{\partial z}-0 \\
+					0-0
+				\end{array}\right)=-\mathrm{j} \omega \mu\left(\begin{array}{l}
+					\underline{H}_x \\
+					\underline{H}_y \\
+					\underline{H}_z
+				\end{array}\right) \\
+			\operatorname{rot} \underline{\vec{H}}=\left|\begin{array}{ccc}
+				\vec{e}_x                   & \vec{e}_y                   & \vec{e}_z                   \\
+				\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+				\underline{H}_x             & \underline{H}_y             & \underline{H}_z
+			\end{array}\right|=\left(\begin{array}{c}
+					\frac{\partial \underline{H_z}}{\partial y}-\frac{\partial \underline{H}_y}{\partial z} \\
+					\frac{\partial \underline{H}_x}{\partial z}-\frac{\partial \underline{H}_z}{\partial x} \\
+					\frac{\partial \underline{H}_y}{\partial x}-\frac{\partial \underline{H}_x}{\partial y}
+				\end{array}\right)=\left(\begin{array}{c}
+					0-\frac{\partial \underline{H}_y}{\partial z} \\
+					\frac{\partial \underline{H}_x}{\partial z}-0 \\
+					0-0
+				\end{array}\right)=\mathrm{j} \omega \varepsilon\left(\begin{array}{l}
+					\underline{E}_x \\
+					\underline{E}_y \\
+					\underline{E}_z
+				\end{array}\right)
+		\end{gathered}
+	$$
+	}
 
 \subsection{Integralsätze}
-\begin{description}
-	\setlength{\itemsep}{1pt}
-	\item Fundamentalsatz der Analysis
-	\item Gauß: Vektorfeld das aus Oberfläche von Volumen strömt muss aus Quelle in Volumen
-	\item Stokes: innere Wirbel kompensieren sich $\rightarrow$ nur den Rand betrachten.
-\end{description}
-\begin{align*}
-	\int_{a}^b \opgrad F \cdot d \vec{s}     & = F(b) - F(a)                                  \\
-	\iiint_V \opdiv \vec{A} \cdot dV         & = \oiint_{ \partial V} \vec{A} \cdot d \vec{a} \\
-	\iint_{A} \oprot \vec{A} \cdot d \vec{a} & = \oint_{ \partial A} \vec{A} \cdot d \vec{r}
-\end{align*}
+	\begin{description}
+		\setlength{\itemsep}{1pt}
+		\item Fundamentalsatz der Analysis
+		\item Gauß: Vektorfeld das aus Oberfläche von Volumen strömt muss aus Quelle in Volumen
+		\item Stokes: innere Wirbel kompensieren sich $\rightarrow$ nur den Rand betrachten.
+	\end{description}
+	\begin{align*}
+		\int_{a}^b \opgrad F \cdot d \vec{s}     & = F(b) - F(a)                                  \\
+		\iiint_V \opdiv \vec{A} \cdot dV         & = \oiint_{ \partial V} \vec{A} \cdot d \vec{a} \\
+		\iint_{A} \oprot \vec{A} \cdot d \vec{a} & = \oint_{ \partial A} \vec{A} \cdot d \vec{r}
+	\end{align*}
 
 
