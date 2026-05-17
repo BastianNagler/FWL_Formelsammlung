@@ -7,5 +7,6 @@ tags
 *.fls
 *.synctex.gz
 # *.pdf
+build/
 
 info.tex
