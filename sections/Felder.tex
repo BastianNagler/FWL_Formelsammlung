@@ -1,13 +1,4 @@
 \section{Felder}
-\textbf{Materialgleichungen}
-\begin{align*}
-	\Aboxed{\vec{J}  = \kappa\vec{E} = \left[\dfrac{A}{m^2}\right]} &
-	\Aboxed{\vec{B}  = \mu\vec{H} = [T]}                            &
-	\Aboxed{\vec{D}  = \varepsilon\vec{E} = \left[\dfrac{C}{m^2}\right]}
-\end{align*}
-
-Verkopplung von $ \vec{E}$- und $ \vec{H}$-Felder über $ \vec{J}=\kappa\vec{E}$.\\
-
 \textbf{Feldunterscheidung}
 \begin{align*}
 	 & \vec{E}(x,y,z)                               & \widehat= & \quad\text{statisches Feld}  & \\
@@ -16,94 +7,103 @@ Verkopplung von $ \vec{E}$- und $ \vec{H}$-Felder über $ \vec{J}=\kappa\vec{E}$
 \end{align*}
 
 \subsection{Elektrostatik}
-Wirbelfreie Felder $\rightarrow$ Gradientenfeld $\rightarrow$ elek. Ladungen
-sind Quellen des $\vec{E}$-Feldes (Skalare Potenzialfkt. $ \varphi $)
-\begin{align*}
-	\oprot \vec{E} & = 0 = \oprot \opgrad E & \vec{E} & = -\opgrad \varphi    & \\
-	\opdiv \vec{D} & = \rho                 & \vec{D} & = \varepsilon \vec{E} &
-\end{align*}
-\begin{equation*}
-	\vec{E} = -\opgrad \varphi = - \left( \tfrac{\partial \varphi}{\partial x}\right) \vec{e}_x - \left( \tfrac{\partial \varphi}{\partial y}\right) \vec{e}_y - \left( \tfrac{\partial \varphi}{\partial z}\right) \vec{e}_z
-\end{equation*}
+	Wirbelfreie Felder $\rightarrow$ Gradientenfeld $\rightarrow$ elek. Ladungen
+	sind Quellen des $\vec{E}$-Feldes (Skalare Potenzialfkt. $ \varphi $)
+	\begin{align*}
+		\oprot \vec{E} & = 0 = \oprot \opgrad E & \vec{E} & = -\opgrad \varphi    & \\
+		\opdiv \vec{D} & = \rho                 & \vec{D} & = \varepsilon \vec{E} &
+	\end{align*}
 
-\subsubsection{Potential-/Poisson-Gleichung}
-La-Place-Gleichung, wenn $ \rho = 0 $
+	\subsubsection{Potential-/Poisson-Gleichung}
+		La-Place-Gleichung, wenn $ \rho = 0 $
 
-\begin{align*}
-	\opdiv \opgrad \varphi = \Delta \varphi & = - \dfrac{\rho}{\varepsilon}           \\
-	\Delta \varphi + \underbrace{ \dfrac{\opgrad \varepsilon \cdot \opgrad \varphi}{\varepsilon}}_{= 0\texttt{, wenn homogen}}
-	                                        & = - \dfrac{\rho (x, y, z)}{\varepsilon} \\
-	\frac{d^2 \varphi}{d x^2} + \frac{d^2 \varphi}{d y^2} + \frac{d^2 \varphi}{d z^2}
-	                                        & = - \dfrac{\rho (x, y, z)}{\varepsilon}
-\end{align*}
-
-\textit{Vereinfachung} zu 1-dimensionalem System:
-\begin{align*}
-	\text{z.B. mit}\, \frac{\partial^2...}{\partial y^2} = \frac{\partial^2...}{\partial z^2} = 0 \quad \Rightarrow \, \frac{\partial^2 \varphi}{\partial x^2} = -\frac{\rho}{\varepsilon}
-\end{align*}
-
-\subsubsection{Randwertprobleme, -bedingungen (RB)}
-\textbf{Dirichlet-RB}: Gesuchte Potenzialfunktion $ \varphi $ nimmt an den
-Rändern einen bestimmten Wert an (Bsp.: $\rho_r = 5V$)
-
-\textbf{Neumann-RB}: Die Normalenableitung $ \tfrac{\partial\varphi}{\partial
-		n} $ der Fkt. $ \varphi $ nimmt an den Rändern einen bestimmten Wert an. \\
-(Bsp.: Grenzfläche unterschiedlicher Dielektrika)
-
-\subsubsection{Green'sche Funktionen}
-\textbullet{\textbf{Skalarpotential} einer Punktladung}
-\[ \varphi (r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r} \qquad\left[V\right] \]
-
-\textbullet{\textbf{E-Feld} einer Punktladung}
-\[ \vec{E}(r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{V}{m}\right] \]
-
-\textbullet{\textbf{D-Feld} einer Punktladung}
-\[ \vec{D}(r) = \dfrac{Q}{4 \pi \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{As}{m^2}=\frac{C}{m^2}\right] \]
-
-\textbullet{\textbf{Potentialfeld} einer Ladungsdichteverteilung}
-
-mit $\varphi(\infty)=0$
-\[
-	\varphi(x, y, z)=\frac{1}{4 \pi \varepsilon} \iiint_{V^{\prime}}
-	\frac{\rho\left(x^{\prime}, y^{\prime},
-		z^{\prime}\right)}{\left|\vec{r}-\vec{r}^{\,\prime}\right|} \mathrm{d}
-	V^{\prime}
-\]
-
-mit der Green'schen Funktion $G\left(\vec{r},
-	\vec{r}^{\,\prime}\right)=\frac{1}{4 \pi
-		\varepsilon\left|\vec{r}-\vec{r}^{\,\prime}\right|}$
-\[ \varphi(x, y, z)=\iiint_{V^{\prime}} G\left(\vec{r}^{\,\prime} \vec{r}^{\,\prime}\right) \rho\left(\vec{r}^{\,\prime}\right) \mathrm{d} V^{\prime} \]
-
-\subsubsection{Elektrischer Dipol}
-Dipolmoment $\vec{p} = Q\cdot\vec{d}$
-
-\makebox[0pt][l]{
-	\begin{minipage}[b]{0.5\columnwidth}
-		\input{../Figures/Felder_Elektrischer_Dipol_1.tex}
-	\end{minipage}
-	\begin{minipage}[b]{0.5\columnwidth}
-		\input{../Figures/Felder_Elektrischer_Dipol_2.tex}
-	\end{minipage}
-}
-
-\makebox[0pt][l]{
-	\begin{minipage}[]{0.5\columnwidth}
 		\begin{align*}
-			\varphi & = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)                                        \\
-			        & = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{r_2-r_1}{r^2}                                                        \\
-			\vec{E} & = -\nabla\varphi                                                                                             \\
-			        & = \frac{1}{4\pi\varepsilon_0}\cdot\left(\frac{3(\vec{p}\cdot\vec{r})\vec{r}}{r^5}-\frac{\vec{p}}{r^3}\right)
+			\opdiv \opgrad \varphi = \Delta \varphi & = - \dfrac{\rho}{\varepsilon}           \\
+			\Delta \varphi + \underbrace{ \dfrac{\opgrad \varepsilon \cdot \opgrad \varphi}{\varepsilon}}_{= 0\texttt{, wenn homogen}}
+													& = - \dfrac{\rho (x, y, z)}{\varepsilon}
 		\end{align*}
-	\end{minipage}
 
-	\begin{minipage}[]{0.5\columnwidth}
-		\begin{align*}
-			\varphi & \approx\frac{Qd\cos\theta}{4\pi\varepsilon_0r^2}                  \\
-			        & = \frac{1}{4\pi\varepsilon_0}\cdot\frac{\vec{p}\cdot\vec{r}}{r^3}
-		\end{align*}
-	\end{minipage}
-}
+		\textbf{meistens Ziel: Vereinfachung zu 1 Variable}
+
+	\subsubsection{Randwertprobleme, -bedingungen (RB)}
+		\textbf{Dirichlet-RB}: Gesuchte Potenzialfunktion $ \varphi $ nimmt an den
+		Rändern einen bestimmten Wert an (Bsp.: $\rho_r = 5V$)
+
+		\textbf{Neumann-RB}: Die Normalenableitung $ \tfrac{\partial\varphi}{\partial
+				n} $ der Fkt. $ \varphi $ nimmt an den Rändern einen bestimmten Wert an. \\
+		(Bsp.: Grenzfläche unterschiedlicher Dielektrika)
+
+	\subsubsection{Green'sche Funktionen}
+		\textbullet{\textbf{Skalarpotential} einer Punktladung}
+		\[ \varphi (r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r} \qquad\left[V\right] \]
+
+		\textbullet{\textbf{E-Feld} einer Punktladung}
+		\[ \vec{E}(r) = \dfrac{Q}{4 \pi \varepsilon_0 \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{V}{m}\right] \]
+
+		\textbullet{\textbf{D-Feld} einer Punktladung}
+		\[ \vec{D}(r) = \dfrac{Q}{4 \pi \cdot r^2}\cdot\vec{e}_r \qquad\left[\frac{As}{m^2}=\frac{C}{m^2}\right] \]
+
+		\textbullet{\textbf{Potentialfeld} einer Ladungsdichteverteilung}
+
+		mit $\varphi(\infty)=0$
+		\[
+			\varphi(x, y, z)=\frac{1}{4 \pi \varepsilon} \iiint_{V^{\prime}}
+			\frac{\rho\left(x^{\prime}, y^{\prime},
+				z^{\prime}\right)}{\left|\vec{r}-\vec{r}^{\,\prime}\right|} \mathrm{d}
+			V^{\prime}
+		\]
+		wobei:
+		\begin{itemize}
+			\item \(\vec{r}'\): Ortsvektor zum Punkt der Ladungsmenge
+			\item \(\vec{r}\): Ortsvektor zum Aufpunkt \\ (Punkt, an dem das Potential berechnet werden soll)
+		\end{itemize}
+
+		mit der Green'schen Funktion $G\left(\vec{r},
+			\vec{r}^{\,\prime}\right)=\frac{1}{4 \pi
+				\varepsilon\left|\vec{r}-\vec{r}^{\,\prime}\right|}$
+		\[ \varphi(x, y, z)=\iiint_{V^{\prime}} G\left(\vec{r}^{\,\prime} \vec{r}^{\,\prime}\right) \rho\left(\vec{r}^{\,\prime}\right) \mathrm{d} V^{\prime} \]
+
+		Vereinfachungen bei bekannter Ladungsverteilung:
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{l | c}
+				Flächenladungsdichte \(\sigma\) & \(\varphi = \frac{1}{4\pi\epsilon} \iint_A' \frac{\sigma(x',y',z')}{\left|\vec{r} - \vec{r}'\right|} \mathsf{d}A'\) \\
+				Linienladungsdichte \(\lambda\) & \(\varphi = \frac{1}{4\pi\epsilon} \int_s' \frac{\lambda(x',y',z')}{\left|\vec{r} - \vec{r}'\right|} \mathsf{d}s'\) \\
+				Diskrete Punktladungen & \(\varphi = \frac{1}{4\pi\epsilon} \sum_{i=1}^N \frac{Q_i}{\vec{r}_i}\)
+			\end{tabular}
+		\end{table}
+
+	\subsubsection{Elektrischer Dipol}
+		{\footnotesize Wird von Prof. Stücke nicht behandelt}
+		\\
+		Dipolmoment $\vec{p} = Q\cdot\vec{d}$
+
+		\makebox[0pt][l]{
+			\begin{minipage}[b]{0.5\columnwidth}
+				\input{../Figures/Felder_Elektrischer_Dipol_1.tex}
+			\end{minipage}
+			\begin{minipage}[b]{0.5\columnwidth}
+				\input{../Figures/Felder_Elektrischer_Dipol_2.tex}
+			\end{minipage}
+		}
+
+		\makebox[0pt][l]{
+			\begin{minipage}[]{0.5\columnwidth}
+				\begin{align*}
+					\varphi & = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{r_1}-\frac{1}{r_2}\right)                                        \\
+							& = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{r_2-r_1}{r^2}                                                        \\
+					\vec{E} & = -\nabla\varphi                                                                                             \\
+							& = \frac{1}{4\pi\varepsilon_0}\cdot\left(\frac{3(\vec{p}\cdot\vec{r})\vec{r}}{r^5}-\frac{\vec{p}}{r^3}\right)
+				\end{align*}
+			\end{minipage}
+
+			\begin{minipage}[]{0.5\columnwidth}
+				\begin{align*}
+					\varphi & \approx\frac{Qd\cos\theta}{4\pi\varepsilon_0r^2}                  \\
+							& = \frac{1}{4\pi\varepsilon_0}\cdot\frac{\vec{p}\cdot\vec{r}}{r^3}
+				\end{align*}
+			\end{minipage}
+		}
 
 \subsection{Magnetostatik}
 Quellenfreie Wirbelfelder mit \textit{geschlossenen} Feldlinien.
@@ -216,7 +216,10 @@ Leiter ist quasineutral: $ \rho = 0 $.
 		      P\left( x,t\right) = \dfrac{1}{2} \cdot E_{0}\cdot e^{^{-x}/_\delta}\cdot H_{0}\cdot e^{^{-x}/_\delta}
 	      \]
 
-	\item \textbf{Rundleiter - Effektive Fläche}:
+	\item \textbf{Rundleiter - Effektive Fläche}: \\
+		  {\footnotesize
+		  	Gilt nur, wenn kleinste geometrische Abmessung \(> 10\delta\)
+		  }
 	      \begin{align*}
 		      A_{\texttt{eff}} & = A_{\texttt{ges}} - A_{\sigma} = R^2\pi-(R-\delta)^2\pi \\
 		                       & = 2\cdot \pi \delta \left( R-\dfrac{\delta }{2}\right)
