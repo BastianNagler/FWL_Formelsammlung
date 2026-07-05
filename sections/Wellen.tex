@@ -51,7 +51,7 @@ Tatsächlicher Zeitverlauf (\textbf{Realteil} von $\underline{\vec{E}}(z,t)$)
 	= \underbrace{E_0}_{\mathclap{\text{Amplitude}}}
 	\cdot \overbrace{e^{-\alpha z}}^{\mathclap{\text{Dämpfung}}}
 	\cdot \underbrace{cos(\omega t \overbrace{-}^{\mathclap{\text{positive z-Richtung}}} \beta z)}_\text{Zeit- und Raumabhängigkeit}
-	\cdot\vec{e}_z}
+	\cdot\vec{e}_x}
 \end{empheq}
 
 \subsubsection{komplexer Amplitudendrehzeiger}
@@ -59,8 +59,8 @@ Tatsächlicher Zeitverlauf (\textbf{Realteil} von $\underline{\vec{E}}(z,t)$)
 $e^{-j\omega t}$!
 \begin{empheq}[]{align*}
 	\boxed{\underline{\vec{E}}(z,t)
-		= E_0\cdot e^{-\alpha z}\cdot e^{j(\omega t-\beta z)}\cdot\vec{e}_z
-		= E_0\cdot e^{-\underline{\gamma}z}\cdot e^{j\omega t}\cdot\vec{e}_z
+		= E_0\cdot e^{-\alpha z}\cdot e^{j(\omega t-\beta z)}\cdot\vec{e}_x
+		= E_0\cdot e^{-\underline{\gamma}z}\cdot e^{j\omega t}\cdot\vec{e}_x
 	}
 \end{empheq}
 \subsubsection{Fortpflanzungskonstante}
@@ -138,12 +138,12 @@ gibt Leistungsfluss einer EM-Welle und Richtung der Energieströmung an.\\
 \end{tabular}
 \begin{align*}
 	S_{av} & =  \frac{1}{2} \cdot E \cdot H
-	=  \frac{1}{2} \cdot \dfrac{E^2}{Z_{F0}}
-	=  \frac{1}{2} \cdot H^2 \cdot Z_{F0}
+	=  \frac{1}{2} \cdot \dfrac{E^2}{Z_{F}}
+	=  \frac{1}{2} \cdot H^2 \cdot Z_{F}
 	=  \frac{P}{A_\texttt{Fläche}}                                                                                   \\
 	P      & = \iint\vec{S}_{\text{av}}\, d\vec{a}
 	= Re\left\{\underline{U}\cdot\underline{I}^*\right\}                                                             \\
-	P_1    & = P_0 \cdot e^{-2\alpha z} \qquad P_{\texttt{Leitung}} = \dfrac{1}{2} \dfrac{\hat{U}^2}{\cdot \Re{Z_L}}
+	P_1    & = P_0 \cdot e^{-2\alpha z} \qquad P_{\texttt{Leitung}} = \dfrac{1}{2} \dfrac{\hat{U}^2}{\Re\{\underline{Z}_L\}}
 \end{align*}
 
 \subsection{Ausbreitung im Medium}
@@ -184,7 +184,7 @@ geringer Verlust: $0 < \kappa \ll\omega\varepsilon$
 	\beta \approx\omega\sqrt{\mu\varepsilon}\left(1+\dfrac{1}{8}\cdot\dfrac{\kappa^2}{\omega^2\varepsilon^2}\right)                                                                      \\
 	\lambda                 & = \dfrac{c_0}{f}\cdot\dfrac{1}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\kappa}{\omega\varepsilon}\right)^2}                       \\
 	v_p                     & = \dfrac{c_0}{\sqrt{\mu_r\varepsilon_r}}\cdot\frac{1}{1+\frac{1}{8}\left(\frac{\kappa}{\omega\varepsilon}\right)^2}                                        \\
-	\Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}\left(1-\frac{j\kappa}{\omega\varepsilon}\right)^{-^1/2} \approx Z_{F0}\left(1+\frac{j\kappa}{2\omega\varepsilon}\right)}
+	\Aboxed{\underline{Z}_F & = \sqrt{\dfrac{\mu}{\varepsilon}}\left(1-\frac{j\kappa}{\omega\varepsilon}\right)^{-\frac{1}{2}} \approx Z_{F0}\left(1+\frac{j\kappa}{2\omega\varepsilon}\right)}
 \end{align*}
 
 \subsubsection{Im guten Leiter}\label{sec:Ausbreitug_guter_Leiter}
@@ -320,8 +320,8 @@ $E$ und $H$: zeitlich sowie örtlich zueinander um \ang{90} phasenverschoben.
 
 Annahme: Grenzfläche bei $z=0$.
 \begin{align*}
-	\Aboxed{ & \text{$H_{\text{max}}$, $E_{\text{min}}$ bei } z = - n \cdot \lambda/_2} & \\
-	\Aboxed{ & \text{$H_{min}$, $E_{max}$ bei } z=- (2n-1) \cdot \lambda/_4}            &
+	\Aboxed{ & \text{$H_{\text{max}}$, $E_{\text{min}}$ bei } z = - n \cdot \dfrac{\lambda}{2}} & \\
+	\Aboxed{ & \text{$H_{min}$, $E_{max}$ bei } z=- (2n-1) \cdot \dfrac{\lambda}{4}}            &
 \end{align*}
 
 \subsubsection{Stehwellenverhältnis (SWR)}
@@ -339,7 +339,7 @@ siehe auch Kapitel \ref{sec:VSWR}.
 	\dfrac{\sin \vartheta_{2}}{\sin \vartheta_{1}} = \dfrac{k_{h}}{k_{t}} & = \sqrt{\dfrac{\mu_{r 1} \varepsilon_{r 1}}{\mu_{r 2} \varepsilon_{r 2}}} = \dfrac{n_{1}}{n_{2}} = \dfrac{v_{p, 2}}{v_{p, 1}} = \dfrac{\lambda_{2}}{\lambda_{1}}
 \end{align*}
 
-\subsubsection{Leistungsbilianz an Grenzflächen}
+\subsubsection{Leistungsbilanz an Grenzflächen}
 Index n: Normalkomponente. \quad Index 0: Amplitude/Betrag\\
 Index h: hinlaufende Welle \quad Index r: rücklaufende Welle\\
 Index t: transmittierte Welle\\
@@ -349,7 +349,7 @@ $r_e$: Reflexionsfaktor
 	S_{t0} & = S_{h0}\cdot \frac{\cos\vartheta_{1}}{\cos\vartheta_{2}}(1-r_e^2)
 \end{align*}
 
-\subsubsection{Totalrefexion/Grenzwinkel}
+\subsubsection{Totalreflexion/Grenzwinkel}
 Grenzwinkel $ \theta_g $ gibt an, bis zu welchem Winkel eine Welle von höherem in kleineres Dielektrikum $ \varepsilon_1 > \varepsilon_2 $ eindringen kann. $ \rightarrow $ Brechungsgesetz beachten!
 \begin{align*}
 	\Aboxed{(1) \, \theta_g & = \arcsin \sqrt{\frac{\mu_{r2}\varepsilon_{r2}}{\mu_{r1}\varepsilon_{r1}}} }    &

@@ -68,7 +68,7 @@ Für Winkel $\alpha l$ bzw. $ \beta l$ auf \textbf{RAD} in TR!
 	\item weitere \textbf{Parameter}: \qquad meistens $ \mu_r = 1 $
 	      \begin{align*}
 		      \lambda_0  = \frac{c_0}{f} \qquad \lambda     & = \frac{2\pi}{\beta} = \frac{c_0}{f\sqrt{\varepsilon_{r,\texttt{eff}}\cdot \mu_{r,\texttt{eff}}}}  \\
-		      l_{\texttt{elek.}} = \beta \cdot l \qquad v_p & = \frac{\omega}{\beta} = \frac{c_0}{\sqrt{\varepsilon_{r,\texttt{eff}}\cdot \mu_{r,\texttt{eff}}}}
+		      \varphi = l_{\texttt{elek.}} = \beta \cdot l \qquad v_p & = \frac{\omega}{\beta} = \frac{c_0}{\sqrt{\varepsilon_{r,\texttt{eff}}\cdot \mu_{r,\texttt{eff}}}}
 	      \end{align*}
 \end{itemize}
 
@@ -85,8 +85,8 @@ Eingangswiderstand $ \underline{Z}_e $ am Leitungsende:
 \begin{itemize}
 	\item kurze Leitung $\rightarrow l \ll \tfrac{\lambda}{4} \quad |\underline{\gamma}l| \ll 1 $
 	      \begin{align*}
-		      \underline{U}(l) & \approx \underline{U}_2 + \underline{I}_2 \cdot l (R' + jwL') \\
-		      \underline{I}(l) & \approx \underline{I}_2 + \underline{U}_2 \cdot l (G'+jwC')
+		      \underline{U}(l) & \approx \underline{U}_2 + \underline{I}_2 \cdot l (R' + j\omega L') \\
+		      \underline{I}(l) & \approx \underline{I}_2 + \underline{U}_2 \cdot l (G'+j\omega C')
 	      \end{align*}
 	      Leitung wird durch konzentrierte Elemente ersetzt.
 
@@ -99,6 +99,7 @@ Eingangswiderstand $ \underline{Z}_e $ am Leitungsende:
 $ R', G' = 0 \rightarrow \alpha = 0 \qquad Z_L, v_p \nsim f$
 \begin{align*}
 	Z_L                & =  \sqrt{\frac{L'}{C'}} \rightarrow \text{rein reell!}                                                                  \\
+	L' & = \frac{Z_L \cdot \sqrt{\varepsilon_r}}{c_0} \qquad C' = \frac{\sqrt{\varepsilon_r}}{Z_L \cdot c_0}										 \\
 	\underline{\gamma} & = j \beta  = j \omega \sqrt{L'C'} \qquad \beta = \omega \cdot \sqrt{L'C'}                                               \\
 	v_p                & = \frac{\omega}{\beta} = \frac{1}{\sqrt{\mu\varepsilon}}= \frac{c_0}{\sqrt{\mu_r\varepsilon_r}} = \frac{1}{\sqrt{L'C'}} \\
 	\lambda            & = \frac{2\pi}{\beta}= \frac{v_p}{f}= \frac{c_0}{f\sqrt{\mu_r\varepsilon_r}}=\frac{1}{f\sqrt{L'C'}}
@@ -107,13 +108,13 @@ $ R', G' = 0 \rightarrow \alpha = 0 \qquad Z_L, v_p \nsim f$
 \subsubsection{verlustloser Reflexionsfaktor}\label{sec:verlustlos_rfaktor}
 $ \underline{r}_{(l=0)} = \underline{r}_2 \qquad 0<r<1 \qquad 0<\Psi<2\pi $ \quad  $\Psi$ in \textbf{RAD}!
 \begin{align*}
-	\underline{r}(l)              & = \underline{r}_2 \cdot e^{-j2\beta l} = r \cdot e^{-j(\Psi_0+2\beta l)} =r\cdot e^{j\Psi}                                            \\ &=\tfrac{\underline{Z}(l)-Z_L}{\underline{Z}(l)+Z_L}\\
+	\underline{r}(l)              & = \underline{r}_2 \cdot e^{-j2\beta l} = r \cdot e^{j(\Psi_0-2\beta l)} =r\cdot e^{j\Psi}                                            \\ &=\tfrac{\underline{Z}(l)-Z_L}{\underline{Z}(l)+Z_L}\\
 	\underline{r}_2               & = \tfrac{\underline{Z}_2-Z_L}{\underline{Z}_2+Z_L} = \tfrac{\underline{U}_2-\underline{I}_2Z_L}{\underline{U}_2 +\underline{I}_2 Z_L} \\
 	\tfrac{\underline{Z}(l)}{Z_L} & = \tfrac{1+\underline{r}(l)}{1-\underline{r}(l)}
 \end{align*}
 \begin{align*}
 	 & U_{\texttt{max}} = |U_h| \cdot (1+|r(l)|)                            & U_{\texttt{min}} = |U_h| \cdot (1-|r(l)|)                           & \\
-	 & I_{\texttt{max}} = \left | \frac{U_h}{Z_L} \right | \cdot (1+|r(l)|) & I_{\texttt{min}} = \left| \frac{U_h}{Z_L} \right | \cdot (1-|r(l)|) &
+	 & I_{\texttt{max}} = \left | \frac{U_h}{Z_L} \right | \cdot (1+|r(l)|) & I_{\texttt{min}} = \left| \frac{U_h}{Z_L} \right| \cdot (1-|r(l)|) &
 \end{align*}
 
 \subsubsection{Beliebiger Abschluss (Last)} \label{beliebig_abschluss}
@@ -250,7 +251,7 @@ Smith-Chart: Kap. \ref{sec:Smith_All} \qquad VSWR: Kap. \ref{sec:VSWR}
 \subsubsection{Reflexionsfaktor mit Verlusten}
 $ r_e $: am \textbf{Eingang} \qquad $ r_a $: am Abschluss/an der Last
 \[
-	r_e = r_a  ^{-2\underline{\gamma} l} =  \overbracket{r_a \cdot e^{-2\alpha l}}^ \texttt{gedämpfter Betrag} \cdot e^{-j2\beta l}
+	r_e = r_a \cdot e^{-2\underline{\gamma} l} =  \overbracket{r_a \cdot e^{-2\alpha l}}^ \texttt{gedämpfter Betrag} \cdot e^{-j2\beta l}
 \]
 \begin{align*}
 	\Aboxed{\alpha & = -\frac{\ln(\frac{r_e}{r_a})}{2 \cdot l} \, \left[ \frac{\si{Np}}{\si{m}} \right]  } & \Aboxed{\beta & = \dfrac{\varphi_2 -\varphi_1}{2\cdot l} \left[ \frac{\si{rad}}{\si{m}} \right] }
@@ -259,6 +260,11 @@ $ r_e $: am \textbf{Eingang} \qquad $ r_a $: am Abschluss/an der Last
 \subsubsection{Gleichspannungswert (=Endwert)}
 \begin{align*}
 	U_A & = U_q\cdot\frac{R_A}{R_i+R_A}
+\end{align*}
+
+\subsubsection{Anpassung Quelle- und Lastwiderstand}
+\begin{align*}
+	Z_L = \sqrt{R_i \cdot R_A} \qquad l = \frac{\lambda}{4}
 \end{align*}
 
 \subsection{Mehrfachreflexionen bei fehlender Anpassung}
@@ -286,7 +292,7 @@ Für beliebige Leitergeometrie gelten folgende Zusammenhänge:
 \]
 Innere Induktivität:
 \[
-	L_i = \frac{R}{w}
+	L_i = \frac{R}{\omega}
 \]
 
 \textbf{\color{red}{Leitungen gehen HIN und ZURÜCK!!!}\\
@@ -296,9 +302,9 @@ Innere Induktivität:
 \subsubsection{Streifenleitung / Parallele Platten}
 Für Sinus-Anregung:
 \begin{align*}
-	I(l) & = \frac{U}{Z_L} = \underbrace{\frac{U_0}{Z_L}}_{I_0}\cdot e^{-j\beta l\cdot e^{j\omega t}}                                                                 \\
-	U(l) & = \int \vec{E} d\vec{s} \stackrel{b\gg d}{=} E\cdot d                                      & \rightarrow  E = \frac{U_0}{d}\cdot^{-j\beta l}\cdot\vec{e}_x \\
-	I(l) & = \oint \vec{H} d\vec{s} =  H\cdot b                                                       & \rightarrow H = \frac{I_0}{b}\cdot^{-j\beta l}\cdot\vec{e}_y  % \\
+	I(l) & = \frac{U}{Z_L} = \underbrace{\frac{U_0}{Z_L}}_{I_0}\cdot e^{-j\beta l}\cdot e^{j\omega t}                                                                 \\
+	U(l) & = \int \vec{E} d\vec{s} \stackrel{b\gg d}{=} E\cdot d                                      & \rightarrow  E = \frac{U_0}{d}\cdot e^{-j\beta l}\cdot\vec{e}_x \\
+	I(l) & = \oint \vec{H} d\vec{s} =  H\cdot b                                                       & \rightarrow H = \frac{I_0}{b}\cdot e^{-j\beta l}\cdot\vec{e}_y  % \\
 \end{align*}
 
 $ \mathbf{b} $: Platten\textbf{breite} \qquad $ \mathbf{d} $: Abstand zwischen
@@ -327,7 +333,7 @@ $ \mathbf{r} $: Leiterradius \qquad $ \mathbf{d} $: Abstand zw. Leitermitten
 \hfill
 \begin{minipage}[b][4cm]{0.5\columnwidth}
 	\begin{flalign*}
-		 & R'=\frac{1}{\pi a\delta\kappa_L} \left[ \frac{\Omega}{m} \right]        & \\
+		 & R'=\frac{1}{\pi r\delta\kappa_L} \left[ \frac{\Omega}{m} \right]        & \\
 		 & L'= \frac{\mu}{\pi} \cosh^{-1}\frac{d}{2r} \left[\frac{H}{m}\right]     & \\
 		 & G'= \frac{\pi\kappa}{\cosh^{-1}(^d/_{2r})} \left[ \frac{S}{m} \right]   & \\
 		 & C'=\frac{\pi\varepsilon}{\cosh^{-1}(^d/_{2r})} \left[\frac{F}{m}\right]
@@ -367,7 +373,7 @@ $ r_a < r < \infty $: Außenbereich, \textbf{keine} Felder!
 
 Bei realer Beschreibung: $ \kappa < \infty $ zusätzliche Feldkomponente:
 \begin{align*}
-	\vec{E}_z \approx E_r \cdot \sqrt{\frac{\omega \cdot \varepsilon}{\kappa}}\cdot \vec{e}_z
+	\vec{E}_z \approx E_r \cdot \sqrt{\frac{\omega \cdot \varepsilon}{\kappa_L}}\cdot \vec{e}_z
 \end{align*}
 
 \textbf{Dielektrische Dämpfungsverluste}:

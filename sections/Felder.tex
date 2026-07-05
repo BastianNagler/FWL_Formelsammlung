@@ -2,7 +2,7 @@
 \textbf{Feldunterscheidung}
 \begin{align*}
 	 & \vec{E}(x,y,z)                               & \widehat= & \quad\text{statisches Feld}  & \\
-	 & \vec{E}(x,y,z,t)                             & \widehat= & \quad\text{stationäres Feld} & \\
+	 & \vec{E}(x,y,z,t)                             & \widehat= & \quad\text{quasi-stationäres Feld} & \\
 	 & \vec{E}(x,y,z,t)\cdot cos(\omega t -\beta z) & \widehat= & \quad\text{Welle}            &
 \end{align*}
 
@@ -10,7 +10,7 @@
 	Wirbelfreie Felder $\rightarrow$ Gradientenfeld $\rightarrow$ elek. Ladungen
 	sind Quellen des $\vec{E}$-Feldes (Skalare Potenzialfkt. $ \varphi $)
 	\begin{align*}
-		\oprot \vec{E} & = 0 = \oprot \opgrad E & \vec{E} & = -\opgrad \varphi    & \\
+		\oprot \vec{E} & = 0 = \oprot \opgrad \varphi & \vec{E} & = -\opgrad \varphi    & \\
 		\opdiv \vec{D} & = \rho                 & \vec{D} & = \varepsilon \vec{E} &
 	\end{align*}
 
@@ -62,7 +62,7 @@
 		mit der Green'schen Funktion $G\left(\vec{r},
 			\vec{r}^{\,\prime}\right)=\frac{1}{4 \pi
 				\varepsilon\left|\vec{r}-\vec{r}^{\,\prime}\right|}$
-		\[ \varphi(x, y, z)=\iiint_{V^{\prime}} G\left(\vec{r}^{\,\prime} \vec{r}^{\,\prime}\right) \rho\left(\vec{r}^{\,\prime}\right) \mathrm{d} V^{\prime} \]
+		\[ \varphi(x, y, z)=\iiint_{V^{\prime}} G\left(\vec{r}, \vec{r}^{\,\prime}\right) \rho\left(\vec{r}^{\,\prime}\right) \mathrm{d} V^{\prime} \]
 
 		Vereinfachungen bei bekannter Ladungsverteilung:
 		\begin{table}[H]
@@ -70,7 +70,7 @@
 			\begin{tabular}{l | c}
 				Flächenladungsdichte \(\sigma\) & \(\varphi = \frac{1}{4\pi\epsilon} \iint_A' \frac{\sigma(x',y',z')}{\left|\vec{r} - \vec{r}'\right|} \mathsf{d}A'\) \\
 				Linienladungsdichte \(\lambda\) & \(\varphi = \frac{1}{4\pi\epsilon} \int_s' \frac{\lambda(x',y',z')}{\left|\vec{r} - \vec{r}'\right|} \mathsf{d}s'\) \\
-				Diskrete Punktladungen & \(\varphi = \frac{1}{4\pi\epsilon} \sum_{i=1}^N \frac{Q_i}{\vec{r}_i}\)
+				Diskrete Punktladungen & \(\varphi = \frac{1}{4\pi\epsilon} \sum_{i=1}^N \frac{Q_i}{\left|\vec{r} - \vec{r}_i\right|}\)
 			\end{tabular}
 		\end{table}
 
@@ -158,7 +158,7 @@
 			\vec{B} = \nabla \times \vec{A} & = \frac{\mu_0}{4 \pi} \left(\frac{3(\vec{m} \cdot \vec{r})\vec{r}}{r^5} - \frac{\vec{m}}{r^3}\right)
 		\end{flalign*}
 
-\subsection{Quasistätionäre Felder (Wechselstrom)}
+\subsection{Quasistationäre Felder (Wechselstrom)}
 	Homogenes, Isotropes Medium: $ \varepsilon, \mu, \kappa = \mathtt{kost.} $\\
 	Leiter ist quasineutral: $ \rho = 0 $. \(\frac{\partial}{\partial t} \ne 0 \quad \frac{\partial \vec{D}}{\partial t} \ll \vec{J}\)
 	\begin{align*}
@@ -174,7 +174,7 @@
 	\end{equation*}
 	\textbullet komplexer Amplituden-Drehzeiger:
 	\begin{align*}
-		\underline{\vec{J}}(t) & =\underline{\vec{J}} \cdot e ^{jwt} = \vec{J} \cdot e^{j(wt+\varphi)}
+		\underline{\vec{J}}(t) & =\underline{\vec{J}} \cdot e ^{j\omega t} = \vec{J} \cdot e^{j(\omega t+\varphi)}
 	\end{align*}
 	\textbullet Darstellung in karthesischen Koordinaten:
 	\begin{align*}
@@ -267,7 +267,7 @@
 					\end{dcases}
 				\end{align*}
 				\[
-					\boxed{x=\frac{r_0}{2\delta}} \qquad r_0 \, \hat{=} \textnormal{ Außenradius} \qquad X_{AC} = wL_i
+					\boxed{x=\frac{r_0}{2\delta}} \qquad r_0 \, \hat{=} \textnormal{ Außenradius} \qquad X_{AC} = \omega L_i
 				\]
 
 			\item \textbf{Empirische} Beschreibung (Fehler $ < 10\% $) [Meinke, Gundlach]:
@@ -334,7 +334,7 @@
 
 		\textbf{Längsschichtung}:
 		\begin{align*}
-			H_{1t} & = H_{2t} & \frac{B_{1t}}{mu_1} & = \frac{B_{2t}}{\mu_2} &
+			H_{1t} & = H_{2t} & \frac{B_{1t}}{\mu_1} & = \frac{B_{2t}}{\mu_2} &
 		\end{align*}
 
 		Höheres B-Feld (mehr Fluss) bei höherem $ \mu $.

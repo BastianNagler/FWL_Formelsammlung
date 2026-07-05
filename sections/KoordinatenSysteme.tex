@@ -14,7 +14,7 @@
 	&&&\\
 	&\text{\textbf{Rotation}:} \quad                   \operatorname{rot} \vec{E} \equiv \nabla \times \vec{E} =
 	\left[\frac{\partial E_z}{\partial y}-\frac{\partial E_y}{\partial z}\right] \vec{e}_x+\left[\frac{\partial E_x}{\partial z}-\frac{\partial E_z}{\partial x}\right] \vec{e}_y+\left[\frac{\partial E_y}{\partial x}-\frac{\partial E_x}{\partial y}\right] \vec{e}_z&&&\\
-	&\text{\textbf{La-Place}}: \quad \Delta \vec{E} \equiv \nabla\cdot\nabla\cdot\vec{E} =\frac{\partial^{2}\vec{E}}{\partial x^{2}}+\frac{\partial^{2}\vec{E}}{\partial y^{2}}+\frac{\partial^{2}\vec{E}}{\partial z^{2}} \qquad                   
+	&\text{\textbf{La-Place}}: \quad \Delta \vec{E} \equiv (\nabla\cdot\nabla)\vec{E} =\frac{\partial^{2}\vec{E}}{\partial x^{2}}+\frac{\partial^{2}\vec{E}}{\partial y^{2}}+\frac{\partial^{2}\vec{E}}{\partial z^{2}} \qquad                   
 	\Delta \vec{E} = \opgrad \opdiv \vec{E}-\operatorname{rot} \operatorname{rot} \vec{E} = \Delta E_x \vec{e}_x+\Delta E_y \vec{e}_y+\Delta E_z \vec{e}_z \\
 	&\Delta \vec{E} = \left[\frac{\partial^{2} E_x}{\partial x^{2}}+\frac{\partial^{2} E_x}{\partial y^{2}}+\frac{\partial^{2} E_x}{\partial z^{2}}\right] \vec{e}_x+\left[\frac{\partial^{2} E_y}{\partial x^{2}}+\frac{\partial^{2} E_y}{\partial y^{2}}+\frac{\partial^{2} E_y}{\partial z^{2}}\right] \vec{e}_y+ \left[\frac{\partial^{2} E_z}{\partial x^{2}}+\frac{\partial^{2} E_z}{\partial y^{2}}+\frac{\partial^{2} E_z}{\partial z^{2}}\right] \vec{e}_z     
 	&&&\\
@@ -34,9 +34,9 @@ Polarkoordinaten siehe S.386, Papula S.387,
 	+\frac{1}{r} \frac{\partial \phi}{\partial \varphi} \vec{e}_\varphi
 	+\frac{\partial \phi}{\partial z} \vec{e}_z &&&\\
 	&\text{\textbf{Divergenz}:}
-      \quad \opdiv \vec{D} \equiv \nabla \cdot \vec{D}=\frac{1}{r}\cdot\frac{\partial}{\partial r}\left(r\cdot\vec{D}_{r}\right)
-		+\frac{1}{r}\cdot\frac{\partial \vec{D}_{\varphi}}{\partial \varphi}
-		+\frac{\partial \vec{D}_{z}}{\partial z}
+      \quad \opdiv \vec{D} \equiv \nabla \cdot \vec{D}=\frac{1}{r}\cdot\frac{\partial}{\partial r}\left(r\cdot D_{r}\right)
+		+\frac{1}{r}\cdot\frac{\partial D_{\varphi}}{\partial \varphi}
+		+\frac{\partial D_{z}}{\partial z}
 	&&&\\
 	&\text{\textbf{Rotation}:}                   \quad \operatorname{rot} \vec{E} \equiv \nabla \times \vec{E}=
 	\left[\frac{1}{r}\cdot\frac{\partial E_z}{\partial \varphi}-\frac{\partial E_\varphi}{\partial z}\right] \vec{e}_r
@@ -58,7 +58,7 @@ siehe Papula S.391/392
 \begin{flalign*}
 	&\text{Variablen:}\quad r,\vartheta,\varphi \text{(alternativ $\alpha$)} \qquad \qquad \text{Einheitsvektoren:}\quad \vec{e}_r, \vec{e}_\vartheta,\vec{e}_\varphi \qquad \qquad
 	\text{Rechtssystem:}\quad \vec{e}_r \times \vec{e}_\vartheta=\vec{e}_\varphi &&&\\
-	&\text{Linienelemente:} \quad  ds=\sqrt{d r^{2}+ \mathbf{r^2} \sin^2 \vartheta \, d \varphi^{2}+\mathbf{r^2} d \vartheta^{2}} = dr \cdot \vec{e}_r + r \, d\vartheta \cdot \vec{e}_\vartheta + r \, \sin \varphi \,  d\varphi \cdot \vec{e}_\varphi \\
+	&\text{Linienelemente:} \quad  ds=\sqrt{d r^{2}+ \mathbf{r^2} \sin^2 \vartheta \, d \varphi^{2}+\mathbf{r^2} d \vartheta^{2}} = dr \cdot \vec{e}_r + r \, d\vartheta \cdot \vec{e}_\vartheta + r \, \sin \vartheta \,  d\varphi \cdot \vec{e}_\varphi \\
 	&\text{Volumenelemente:} \quad  dV = \mathbf{r^2} \, \sin \vartheta \, dr \, d\vartheta \, d\varphi &&&\\
 	&\text{Flächenelemente:} \quad  dA_{r\vartheta} = \mathbf{r}\, dr \, d\vartheta \, \vec{e}_\varphi \quad dA_{r\varphi} = \mathbf{r}\, \sin \, \vartheta \, dr \, d\varphi \, \vec{e}_\vartheta \quad dA_{\vartheta \varphi} = \mathbf{r^2} \, \sin \vartheta \, d\vartheta \, d\varphi \, \vec{e}_r
 	&&&\\

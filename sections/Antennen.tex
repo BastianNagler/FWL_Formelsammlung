@@ -12,7 +12,7 @@ Im Zeitbereich:
 {\footnotesize\begin{align*}
 	E_r (t)         & = \frac{Z_F I_0 l}{2\pi r^3 \beta}\cos \vartheta \left[ \sin (\omega t- \beta r) + \beta r \cos (\omega t - \beta r) \right]                                        \\
 	E_\vartheta (t) & = \frac{Z_F I_0 l}{4\pi r^3 \beta}\sin \vartheta \left[ \sin (\omega t- \beta r) + \beta r \cos (\omega t - \beta r) - (\beta r)^2 \sin(\omega t - \beta r) \right] \\
-	H_\varphi (t)   & = \frac{I_0 l}{4\pi r^2 }\sin \vartheta \left[ \cos (\omega t- \beta r) + \beta r \sin (\omega t - \beta r) \right]
+	H_\varphi (t)   & = \frac{I_0 l}{4\pi r^2 }\sin \vartheta \left[ \cos (\omega t- \beta r) - \beta r \sin (\omega t - \beta r) \right]
 \end{align*}}
 
 \subsubsection[Nahfeld]{Nahfeld (Fresnel-Zone)} $\frac{\lambda}{2\pi R}\gg 1$ oder $\beta R \ll 1$ oder $ r \ll \lambda $ \qquad  $ \approx $  Faktor 10\\
@@ -269,7 +269,7 @@ Freiraumdämpfung wird durch räumliche Verteilung der Strahlung verursacht,
 \subsubsection{Leistungspegel/Freiraumpegel}
 \begin{align*}
 	L     & = 10 \lg \left(\frac{P}{1 \si{mW}}\right) \qquad [\si{dBm}] \\
-	L_{e} & = L_{s}+g_{s}+g_{s}-a_{0} \qquad [\si{dB}]
+	L_{e} & = L_{s}+g_{s}+g_{e}-a_{0} \qquad [\si{dB}]
 \end{align*}
 
 \subsection{Bezugsantennen}
@@ -303,3 +303,11 @@ der Dipolantenne.
 
 Geometrisch zu kurze Antennen können durch breiteren Drahtdurchmesser,
 Fußpunktinduktivität oder Dachkapazität elektrisch verlängert werden.
+
+\subsection{Umrechnung dBi und dBd}
+dBi: Gain bezogen auf isotropen Kugelstrahler \\
+dBd: Gain bezogen auf Halbwellendipol \\
+\begin{align*}
+	g_{dBi} & = g_{dBd} + 2,15 \\
+	g_{dBd} & = g_{dBi} - 2,15
+\end{align*}
